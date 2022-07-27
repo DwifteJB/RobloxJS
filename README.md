@@ -1,6 +1,16 @@
 # RobloxJS
 Roblox API written as a nodejs module.
 (sorry if any of this is wrong, i had a panic attack half way through lol)
+
+# How to install
+
+Since my NPMJS account is currently down, you can only install using this command:
+
+    npm i https://github.com/DwifteJB/RobloxJS
+    
+This requires GIT to be installed.
+
+
 # How to use
 
 ## Place Class
@@ -107,12 +117,12 @@ Roblox API written as a nodejs module.
 
 ### Get Player's older Usernames
 <a href=https://users.roblox.com/docs#!/Users/get_v1_users_userId>API DOCUMENTATION</a>
+
     const robloxjs = require("robloxjs")
     (async () => {
         let Player = await new robloxjs.Player(1) // Player ID
         let olderUsernames = await Player.getOldUsernames()
     })(); // EVERYTHING MUST BE DONE IN AN ASYNC ENVIRONMENT!!
-
 
 ## Universe Class
 
@@ -151,6 +161,7 @@ Well, simply use the Get Universe ID of Place section from the Player Class
 
 ### Get IDs from Usernames
 <a href=https://users.roblox.com/docs#!/Users/post_v1_usernames_users>API DOCUMENTATION</a>
+
 
     const robloxjs = require("robloxjs")
     (async () => {
