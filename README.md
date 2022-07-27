@@ -97,13 +97,22 @@ Roblox API written as a nodejs module.
     })(); // EVERYTHING MUST BE DONE IN AN ASYNC ENVIRONMENT!!
 
 ### Get Player's General Info
-I completely forgot where I found this.
+<a href=https://users.roblox.com/docs#!/Users/get_v1_users_userId>API DOCUMENTATION</a>
 
     const robloxjs = require("robloxjs")
     (async () => {
         let Player = await new robloxjs.Player(1) // Player ID
-        let createdGames = await Player.getInfo()
+        let generalInfo = await Player.getInfo()
     })(); // EVERYTHING MUST BE DONE IN AN ASYNC ENVIRONMENT!!
+
+### Get Player's older Usernames
+<a href=https://users.roblox.com/docs#!/Users/get_v1_users_userId>API DOCUMENTATION</a>
+    const robloxjs = require("robloxjs")
+    (async () => {
+        let Player = await new robloxjs.Player(1) // Player ID
+        let olderUsernames = await Player.getOldUsernames()
+    })(); // EVERYTHING MUST BE DONE IN AN ASYNC ENVIRONMENT!!
+
 
 ## Universe Class
 
