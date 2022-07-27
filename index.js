@@ -1,6 +1,6 @@
 const fetch = require("node-fetch")
 async function getPlayerIDFromUsernames(usernames, excludeBannedUsers) {
-    if (typeof(usernames) != Array) return console.error(`Invalid Type given. Required Array (["username1","username2"]). Got ${typeof(usernames)}`); 
+    if (typeof(usernames) != object) return console.error(`Invalid Type given. Required Array (["username1","username2"]). Got ${typeof(usernames)}`); 
     (!excludeBannedUsers || typeof(excludeBannedUsers) != Boolean) ? false : excludeBannedUsers 
     return await fetch('https://users.roblox.com/v1/usernames/users', { method: 'POST', body: {"usernames": usernames, "excludeBannedUsers": excludeBannedUsers}}).json()
 }
