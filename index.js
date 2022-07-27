@@ -26,6 +26,9 @@ class Player {
     getHeadShotPicture(width,height) {
         return fetch(`https://www.roblox.com/bust-thumbnail/image?userId=${this.playerID}&width=${width}&height=${height}&format=png`).then(res => res.url)
     }
+    getOldUsernames() {
+        return fetch(`https://users.roblox.com/v1/users/${this.playerID}/username-history?limit=100&sortOrder=Desc`).then(res => res.json());
+    }
     getCreatedGames() {
         return fetch(`https://www.roblox.com/users/profile/playergames-json?userId=${this.playerID}`).then(res => res.json())
     }
