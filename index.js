@@ -36,7 +36,7 @@ class Player {
         return fetch(`https://www.roblox.com/outfit-thumbnail/image?userOutfitId=${this.playerID}&width=${width}&height=${height}&format=png`).then(res => res.url)
     }
     getAvatarThumbnails() {
-        return fetch(`https://www.roblox.com/avatar-thumbnails?params=[{userId:${this.playerID}]`).then(res => res.json())
+        return fetch(`https://www.roblox.com/avatar-thumbnails?params=[{userId:${this.playerID}}]`).then(res => res.json())
     }
     getOnlineStatus() {
         return fetch(`https://api.roblox.com/users/${this.playerID}/onlinestatus/`)
