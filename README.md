@@ -52,7 +52,7 @@ Roblox API written as a nodejs module.
 
     const robloxjs = require("robloxjs")
     (async () => {
-        let Player = await new robloxjs.Player(1) // Place ID
+        let Player = await new robloxjs.Player(1) // Player ID
         let HeadshotURL = await Player.getHeadShotPicture(400,400)
     })(); // EVERYTHING MUST BE DONE IN AN ASYNC ENVIRONMENT!!
 
@@ -65,7 +65,7 @@ Roblox API written as a nodejs module.
 
     const robloxjs = require("robloxjs")
     (async () => {
-        let Player = await new robloxjs.Player(1) // Place ID
+        let Player = await new robloxjs.Player(1) // Player ID
         let OutFitURL = await Player.getOutfitPicture(400,400)
     })(); // EVERYTHING MUST BE DONE IN AN ASYNC ENVIRONMENT!!
 
@@ -74,7 +74,7 @@ Roblox API written as a nodejs module.
 
     const robloxjs = require("robloxjs")
     (async () => {
-        let Player = await new robloxjs.Player(1) // Place ID
+        let Player = await new robloxjs.Player(1) // Player ID
         let ListOfAvatarThumbnails = await Player.getAvatarThumbnails()
     })(); // EVERYTHING MUST BE DONE IN AN ASYNC ENVIRONMENT!!
 
@@ -83,7 +83,7 @@ Roblox API written as a nodejs module.
 
     const robloxjs = require("robloxjs")
     (async () => {
-        let Player = await new robloxjs.Player(1) // Place ID
+        let Player = await new robloxjs.Player(1) // Player ID
         let onlineStatus = await Player.getOnlineStatus()
     })(); // EVERYTHING MUST BE DONE IN AN ASYNC ENVIRONMENT!!
 
@@ -92,7 +92,7 @@ Roblox API written as a nodejs module.
 
     const robloxjs = require("robloxjs")
     (async () => {
-        let Player = await new robloxjs.Player(1) // Place ID
+        let Player = await new robloxjs.Player(1) // Player ID
         let createdGames = await Player.getCreatedGames()
     })(); // EVERYTHING MUST BE DONE IN AN ASYNC ENVIRONMENT!!
 
@@ -101,7 +101,7 @@ I completely forgot where I found this.
 
     const robloxjs = require("robloxjs")
     (async () => {
-        let Player = await new robloxjs.Player(1) // Place ID
+        let Player = await new robloxjs.Player(1) // Player ID
         let createdGames = await Player.getInfo()
     })(); // EVERYTHING MUST BE DONE IN AN ASYNC ENVIRONMENT!!
 
@@ -136,6 +136,16 @@ Well, simply use the Get Universe ID of Place section from the Player Class
     (async () => {
         let Universe = await new robloxjs.Universe(1337) // Universe ID
         let UniversePrices = await Universe.getPrice()
+    })(); // EVERYTHING MUST BE DONE IN AN ASYNC ENVIRONMENT!!
+
+## Other Methods
+
+### Get IDs from Usernames
+<a href=https://users.roblox.com/docs#!/Users/post_v1_usernames_users>API DOCUMENTATION</a>
+
+    const robloxjs = require("robloxjs")
+    (async () => {
+        let IDS = await robloxjs.getPlayerIDFromUsernames(["RobsPlayz", "Roblox"], false) // IDS IN ARRAY, EXCLUDE BANNED MEMBERS?
     })(); // EVERYTHING MUST BE DONE IN AN ASYNC ENVIRONMENT!!
 
 ### Note
