@@ -23,20 +23,20 @@ class Player {
                 } else return true
             })
     }
-    getHeadShotPicture(width,height) {
-        return fetch(`https://www.roblox.com/bust-thumbnail/image?userId=${this.playerID}&width=${width}&height=${height}&format=png`).then(res => res.url)
+    getAvatar() {
+        return fetch(`https://thumbnails.roblox.com/v1/users/avatar?userIds=${this.playerID}&size=420x420&format=Png&isCircular=false`).then(res => res.json());
+    }
+    getAvatarBust() {
+        return fetch(`https://thumbnails.roblox.com/v1/users/avatar-bust?userIds=${this.playerID}&size=420x420&format=Png&isCircular=false`).then(res => res.json());
+    }
+    getAvatarHeadshot() {
+        return fetch(`https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=${this.playerID}&size=420x420&format=Png&isCircular=false`).then(res => res.json());
     }
     getOldUsernames() {
         return fetch(`https://users.roblox.com/v1/users/${this.playerID}/username-history?limit=100&sortOrder=Desc`).then(res => res.json());
     }
     getCreatedGames() {
         return fetch(`https://www.roblox.com/users/profile/playergames-json?userId=${this.playerID}`).then(res => res.json())
-    }
-    getOutfitPicture(width,height) {
-        return fetch(`https://www.roblox.com/outfit-thumbnail/image?userOutfitId=${this.playerID}&width=${width}&height=${height}&format=png`).then(res => res.url)
-    }
-    getAvatarThumbnails() {
-        return fetch(`https://www.roblox.com/avatar-thumbnails?params=[{userId:${this.playerID}}]`).then(res => res.json())
     }
     getOnlineStatus() {
         return fetch(`https://api.roblox.com/users/${this.playerID}/onlinestatus/`)
