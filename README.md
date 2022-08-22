@@ -54,39 +54,27 @@ This requires GIT to be installed.
 
 ## Player Class
 
-### Get Headshot player URL
-<a href=https://github.com/matthewdean/roblox-web-apis#search-apis>API DOCUMENTATION</a>
+### Get Avatar Icons
+<a href=https://thumbnails.roblox.com/docs#!/Avatar/get_v1_users_avatar_headshot>API DOCUMENTATION</a>
 
-<a href=https://github.com/matthewdean/roblox-web-apis#valid-thumbnail-sizes>Valid Thumbnail Sizes</a>
-
-
+     const robloxjs = require("robloxjs")
+    (async () => {
+        let Player = await new robloxjs.Player(1) // Player ID
+        let onlineStatus = await Player.getAvatar()
+    })(); // EVERYTHING MUST BE DONE IN AN ASYNC ENVIRONMENT!
+    
     const robloxjs = require("robloxjs")
     (async () => {
         let Player = await new robloxjs.Player(1) // Player ID
-        let HeadshotURL = await Player.getHeadShotPicture(400,400)
-    })(); // EVERYTHING MUST BE DONE IN AN ASYNC ENVIRONMENT!!
-
-
-### Get Outfit Picture URL
-<a href=https://github.com/matthewdean/roblox-web-apis#search-apis>API DOCUMENTATION</a>
-
-<a href=https://github.com/matthewdean/roblox-web-apis#valid-thumbnail-sizes>Valid Thumbnail Sizes</a>
-
-
-    const robloxjs = require("robloxjs")
+        let onlineStatus = await Player.getAvatarBust()
+    })(); // EVERYTHING MUST BE DONE IN AN ASYNC ENVIRONMENT!
+    
+        const robloxjs = require("robloxjs")
     (async () => {
         let Player = await new robloxjs.Player(1) // Player ID
-        let OutFitURL = await Player.getOutfitPicture(400,400)
-    })(); // EVERYTHING MUST BE DONE IN AN ASYNC ENVIRONMENT!!
-
-### Get Avatar Thumbnails
-<a href=https://github.com/matthewdean/roblox-web-apis#search-apis>API DOCUMENTATION</a>
-
-    const robloxjs = require("robloxjs")
-    (async () => {
-        let Player = await new robloxjs.Player(1) // Player ID
-        let ListOfAvatarThumbnails = await Player.getAvatarThumbnails()
-    })(); // EVERYTHING MUST BE DONE IN AN ASYNC ENVIRONMENT!!
+        let onlineStatus = await Player.getAvatarHeadshot()
+    })(); // EVERYTHING MUST BE DONE IN AN ASYNC ENVIRONMENT!
+    
 
 ### Get Online Status
 <a href=https://github.com/S0ftwareUpd8/roblox-api#get-online-status-of-an-user>API DOCUMENTATION</a>
