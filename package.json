@@ -1,5 +1,5 @@
 {
-  "name": "robloxjs",
+  "name": "@dwifte/robloxjs",
   "version": "1.0.0",
   "description": "Roblox API Wrapper written in NodeJS using fetch.",
   "main": "index.js",
