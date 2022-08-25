@@ -13,13 +13,17 @@ This requires GIT to be installed.
 
 # How to use
 
+## Requiring
+
+	const robloxjs = require("@dwifte/robloxjs")
+
 ## Place Class
 
 ### Get Details of Place
 
 <a href=https://github.com/S0ftwareUpd8/roblox-api#get-place-details>API Documentation</a>
 
-    const robloxjs = require("robloxjs")
+    
     (async () => {
         let Place = await new robloxjs.Place(2506738224) // Place ID
         let placeDetails = await Place.getDetails()
@@ -28,7 +32,7 @@ This requires GIT to be installed.
 ### Get Settings of Place
 <a href=https://github.com/S0ftwareUpd8/roblox-api#get-place-settings>API Documentation</a>
 
-    const robloxjs = require("robloxjs")
+    
     (async () => {
         let Place = await new robloxjs.Place(2506738224) // Place ID
         let PlaceSettings = await Place.getSettings()
@@ -37,7 +41,7 @@ This requires GIT to be installed.
 ### Get Universe ID of Place
 <a href=https://github.com/S0ftwareUpd8/roblox-api#get-universe-containing-place>API Documentation</a>
 
-    const robloxjs = require("robloxjs")
+    
     (async () => {
         let Place = await new robloxjs.Place(2506738224) // Place ID
         let UniverseJSON = await Place.getUniverse()
@@ -46,7 +50,7 @@ This requires GIT to be installed.
 ### Get Game Instances
 <a href=https://games.roblox.com/docs#!/GameInstances/get_v1_games_placeId_servers_serverType>API Documentation</a>
 
-    const robloxjs = require("robloxjs")
+    
     (async () => {
         let Place = await new robloxjs.Place(2506738224) // Place ID
         let gameInstances = await Place.getGameInstances()
@@ -57,19 +61,19 @@ This requires GIT to be installed.
 ### Get Avatar Icons
 <a href=https://thumbnails.roblox.com/docs#!/Avatar/get_v1_users_avatar_headshot>API DOCUMENTATION</a>
 
-     const robloxjs = require("robloxjs")
+     
     (async () => {
         let Player = await new robloxjs.Player(1) // Player ID
         let onlineStatus = await Player.getAvatar()
     })(); // EVERYTHING MUST BE DONE IN AN ASYNC ENVIRONMENT!
     
-    const robloxjs = require("robloxjs")
+    
     (async () => {
         let Player = await new robloxjs.Player(1) // Player ID
         let onlineStatus = await Player.getAvatarBust()
     })(); // EVERYTHING MUST BE DONE IN AN ASYNC ENVIRONMENT!
     
-        const robloxjs = require("robloxjs")
+        
     (async () => {
         let Player = await new robloxjs.Player(1) // Player ID
         let onlineStatus = await Player.getAvatarHeadshot()
@@ -79,7 +83,7 @@ This requires GIT to be installed.
 ### Get Online Status
 <a href=https://github.com/S0ftwareUpd8/roblox-api#get-online-status-of-an-user>API DOCUMENTATION</a>
 
-    const robloxjs = require("robloxjs")
+    
     (async () => {
         let Player = await new robloxjs.Player(1) // Player ID
         let onlineStatus = await Player.getOnlineStatus()
@@ -88,7 +92,7 @@ This requires GIT to be installed.
 ### Get Player's Created Games
 <a href=https://github.com/matthewdean/roblox-web-apis#get-a-users-profile-games>API DOCUMENTATION</a>
 
-    const robloxjs = require("robloxjs")
+    
     (async () => {
         let Player = await new robloxjs.Player(1) // Player ID
         let createdGames = await Player.getCreatedGames()
@@ -97,7 +101,7 @@ This requires GIT to be installed.
 ### Get Player's General Info
 <a href=https://users.roblox.com/docs#!/Users/get_v1_users_userId>API DOCUMENTATION</a>
 
-    const robloxjs = require("robloxjs")
+    
     (async () => {
         let Player = await new robloxjs.Player(1) // Player ID
         let generalInfo = await Player.getInfo()
@@ -106,7 +110,7 @@ This requires GIT to be installed.
 ### Get Player's older Usernames
 <a href=https://users.roblox.com/docs#!/Users/get_v1_users_userId>API DOCUMENTATION</a>
 
-    const robloxjs = require("robloxjs")
+    
     (async () => {
         let Player = await new robloxjs.Player(1) // Player ID
         let olderUsernames = await Player.getOldUsernames()
@@ -121,7 +125,7 @@ Well, simply use the Get Universe ID of Place section from the Player Class
 ### Get all places connected to Universe
 <a href=https://github.com/S0ftwareUpd8/roblox-api#get-places-in-an-universe>API DOCUMENTATION</a>
 
-    const robloxjs = require("robloxjs")
+    
     (async () => {
         let Universe = await new robloxjs.Universe(1337) // Universe ID
         let UniversePlaces = await Universe.getPlaces()
@@ -130,7 +134,7 @@ Well, simply use the Get Universe ID of Place section from the Player Class
 ### Get Info
 <a href=https://github.com/S0ftwareUpd8/roblox-api#get-info-about-an-universe>API DOCUMENTATION</a>
 
-    const robloxjs = require("robloxjs")
+    
     (async () => {
         let Universe = await new robloxjs.Universe(1337) // Universe ID
         let UniverseInfo = await Universe.getInfo()
@@ -139,7 +143,7 @@ Well, simply use the Get Universe ID of Place section from the Player Class
 ### Get Price of Game
 <a href=https://games.roblox.com/docs#!/Games/get_v1_games_games_product_info>API DOCUMENTATION</a>
 
-    const robloxjs = require("robloxjs")
+    
     (async () => {
         let Universe = await new robloxjs.Universe(1337) // Universe ID
         let UniversePrices = await Universe.getPrice()
@@ -151,7 +155,7 @@ Well, simply use the Get Universe ID of Place section from the Player Class
 <a href=https://users.roblox.com/docs#!/Users/post_v1_usernames_users>API DOCUMENTATION</a>
 
 
-    const robloxjs = require("robloxjs")
+    
     (async () => {
         let IDS = await robloxjs.getPlayerIDFromUsernames(["RobsPlayz", "Roblox"], false) // IDS IN ARRAY, EXCLUDE BANNED MEMBERS?
     })(); // EVERYTHING MUST BE DONE IN AN ASYNC ENVIRONMENT!!
