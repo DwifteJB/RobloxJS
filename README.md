@@ -1,6 +1,5 @@
 # RobloxJS
 Roblox API written as a nodejs module.
-(sorry if any of this is wrong, i had a panic attack half way through lol)
 
 # How to install
 
