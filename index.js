@@ -42,49 +42,45 @@ class Player {
         return fetch(`https://users.roblox.com/v1/users/${this.playerID}`).then(res => res.json())
     }
 }
-/*
-            MASSIVE WARNING!!! FROM DWIFTE
-            DO NOT EXPOSE THE ROBLOSECURITY URL FROM ROBLOX.
-            UNDER. ANY. CIRCUMSTANCE.
 
-            THANK YOU.
-
-            (User class currently doesnt work.)
- */
 class User {
     constructor(roblosecurity) {
-        // THIS IS USING ROBLOSECURITY! DO NOT SHARE THIS COOKIE WITH ANYONE.
         this.roblosecurity = roblosecurity;
-        if (this.checkStatus() == false) return console.error(`Invalid roblosecurity token`);
+    }
+    fetchWithToken(url) {
+        return fetch(url, {
+            headers: {
+                cookie: `.ROBLOSECURITY=${this.roblosecurity};`
+            }
+        }).then(res => res.json())
     }
     checkStatus() {
-        return fetch("https://www.roblox.com/my/account/json",`.ROBLOSECURITY=${this.roblosecurity};`)
+        return this.fetchWithToken("https://www.roblox.com/my/account/json")
             .then(res => {
                 try {
-                    let req = res.json()
-                    if (req.Name) return true
+                    if (res.Name) return true
                 } catch (e) {
                     return false
                 }
             })
     }
     getFavouritedGames() {
-        return fetch("https://www.roblox.com/user/favorites/places",`.ROBLOSECURITY=${this.roblosecurity}`).then(res => res.json())
+        return this.fetchWithToken("https://www.roblox.com/user/favorites/places")
     }
     getAccountDetails() {
-        return fetch("https://www.roblox.com/my/account/json",`.ROBLOSECURITY=${this.roblosecurity}`).then(res => res.json())
+        return this.fetchWithToken("https://www.roblox.com/my/account/json")
     }
     getAccountSettings() {
-        return fetch("https://www.roblox.com/my/settings/json",`.ROBLOSECURITY=${this.roblosecurity}`).then(res => res.json())
+        return this.fetchWithToken("https://www.roblox.com/my/settings/json")
     }
     getFriendsOnline() {
-        return fetch("https://api.roblox.com/my/friendsonline",`.ROBLOSECURITY=${this.roblosecurity}`).then(res => res.json())
+        return this.fetchWithToken("https://api.roblox.com/my/friendsonline")
     }
     getAccountInfo() {
-        return fetch("https://api.roblox.com/users/account-info",`.ROBLOSECURITY=${this.roblosecurity}`).then(res => res.json())
+        return this.fetchWithToken("https://api.roblox.com/users/account-info")
     }
     getMobileApiInfo() {
-        return fetch("https://www.roblox.com/mobileapi/userinfo",`.ROBLOSECURITY=${this.roblosecurity}`).then(res => res.json())
+        return this.fetchWithToken("https://www.roblox.com/mobileapi/userinfo")
     }
 }
 
@@ -160,5 +156,6 @@ module.exports = {
     Player,
     Place,
     Universe,
-    getPlayerIDFromUsernames
+    getPlayerIDFromUsernames,
+    User
 }

@@ -3,12 +3,7 @@ Roblox API written as a nodejs module.
 
 # How to install
 
-Since my NPMJS account is currently down, you can only install using this command:
-
     npm i https://github.com/DwifteJB/RobloxJS
-    
-This requires GIT to be installed.
-
 
 # How to use
 
@@ -159,9 +154,7 @@ Well, simply use the Get Universe ID of Place section from the Player Class
         let IDS = await robloxjs.getPlayerIDFromUsernames(["RobsPlayz", "Roblox"], false) // IDS IN ARRAY, EXCLUDE BANNED MEMBERS?
     })(); // EVERYTHING MUST BE DONE IN AN ASYNC ENVIRONMENT!!
 
-### Note
 
-**There is a "user" class that is currently unused in the index.js file, this is due to it not working and it is being looked on. If anyone could help our team look for a way to use it, that would be appreciated.**
 # Special Thanks
 
 Special thanks to <a href=https://github.com/S0ftwareUpd8/roblox-api>roblox-api</a> & <a href=https://github.com/matthewdean/roblox-web-apis>roblox-web-apis</a> for the documentation on the API
