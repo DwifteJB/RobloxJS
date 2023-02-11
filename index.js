@@ -16,7 +16,7 @@ class Player {
     }
 
     checkValid() {
-        return fetch(`https://api.roblox.com/users/${this.playerID}/onlinestatus/`)
+        return fetch(`https://api.roblox.com/users/${this.playerID}/`)
             .then(res => {
                 if (res.json().errors || res == false) {
                     return false
@@ -37,10 +37,6 @@ class Player {
     }
     getCreatedGames() {
         return fetch(`https://www.roblox.com/users/profile/playergames-json?userId=${this.playerID}`).then(res => res.json())
-    }
-    getOnlineStatus() {
-        return fetch(`https://api.roblox.com/users/${this.playerID}/onlinestatus/`)
-            .then(res => res.json())
     }
     getInfo() {
         return fetch(`https://users.roblox.com/v1/users/${this.playerID}`).then(res => res.json())
